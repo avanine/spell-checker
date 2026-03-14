@@ -1,0 +1,12 @@
+Sanalista haettu lähteestä:
+
+Nykysuomen sanalista 2024 (päivitetty 11.4.2025)
+Kotimaisten kielten keskus (Kotus)
+https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/
+
+Lisenssi:
+Creative Commons Nimeä 4.0 Kansainvälinen (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/deed.fi
+
+Aineistoon tehdyt muutokset:
+Alkuperäisestä aineistosta on poistettu otsikkorivi sekä homonymia-, sanaluokka- ja taivutustiedot. Jäljelle on jätetty vain kunkin rivin ensimmäinen sarake (hakusana).
