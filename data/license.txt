@@ -2,7 +2,7 @@ Sanalista haettu lähteestä:
 
 Nykysuomen sanalista 2024 (päivitetty 11.4.2025)
 Kotimaisten kielten keskus (Kotus)
-https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/
+https://kaino.kotus.fi/lataa/nykysuomensanalista2024.txt
 
 Lisenssi:
 Creative Commons Nimeä 4.0 Kansainvälinen (CC BY 4.0)
