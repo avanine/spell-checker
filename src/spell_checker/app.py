@@ -1,20 +1,23 @@
 from flask import Flask
 from pathlib import Path
+from trie import Trie
 
 app = Flask(__name__)
-
 
 def load_words():
     data_path = Path(__file__).resolve().parents[2] / "data" / "finnish_words_kotus.txt"
 
-    with open(data_path, "r") as f:
-        return [word.strip() for word in f]
+    trie = Trie()
 
+    trie.insert("moi")
+    trie.insert("moikka")
+    trie.insert("moro")
+
+    return str(trie.search("mo"))
 
 @app.route("/")
 def index():
-    words = load_words()
-    return "\n".join(words)
+    return load_words()
 
 
 if __name__ == "__main__":
