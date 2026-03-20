@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, render_template
 from pathlib import Path
 from trie import Trie
 
@@ -20,7 +20,11 @@ trie = load_words()
 
 @app.route("/")
 def index():
-    return "<br>".join(trie)
+    word = request.args.get("word", "")
+    result = None
+    if word:
+        result = trie.search(word.lower())
+    return render_template("index.html", word=word, result=result)
 
 
 if __name__ == "__main__":
