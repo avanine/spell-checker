@@ -1,0 +1,3 @@
+[run]
+source = src/spell_checker
+omit = src/spell_checker/app.py,src/spell_checker/__init__.py
