@@ -9,15 +9,18 @@ def load_words():
 
     trie = Trie()
 
-    trie.insert("moi")
-    trie.insert("moikka")
-    trie.insert("moro")
+    with open(data_path, encoding='utf-8') as file:
+        for line in file:
+            word = line.strip()
+            if word:
+                trie.insert(word)
+    return trie
 
-    return str(trie.search("mo"))
+trie = load_words()
 
 @app.route("/")
 def index():
-    return load_words()
+    return "<br>".join(trie)
 
 
 if __name__ == "__main__":
