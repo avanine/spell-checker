@@ -20,3 +20,10 @@ Käynnistä sovellus komennolla
 ```bash
 poetry run python src/spell_checker/app.py
 ```
+Testikattavuusraportin saa generoitua komennoilla
+```bash
+poetry run coverage run --branch -m pytest tests
+```
+```bash
+poetry run coverage report -m
+```
