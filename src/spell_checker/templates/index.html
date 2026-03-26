@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Kirjoitusvirheiden korjaaja</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Kirjoitusvirheiden korjaaja</h1>
-    <form>
-        <input type="text" name="word">
-        <button type="submit">Tarkista</button>
-    </form>
-    <p>{{ word }}: {{ result }}</p>
+    <div id="editor-container">
+        <div id="highlights"></div>
+        <textarea id="textarea" placeholder="Kirjoita tekstiä tähän..."></textarea>
+    </div>
+    <script src="{{ url_for('static', filename='spellcheck.js') }}"></script>
 </body>
 </html>

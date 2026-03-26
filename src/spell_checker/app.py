@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from pathlib import Path
 from trie import Trie
 
@@ -20,11 +20,18 @@ trie = load_words()
 
 @app.route("/")
 def index():
-    word = request.args.get("word", "")
-    result = None
-    if word:
-        result = trie.search(word.lower())
-    return render_template("index.html", word=word, result=result)
+    return render_template("index.html")
+
+@app.route("/check", methods=["POST"])
+def check():
+    data = request.get_json()
+    words = data.get("words", [])
+    results = {}
+    for word in words:
+        cleaned = word.lower().strip()
+        if cleaned:
+            results[word] = trie.search(cleaned)
+    return jsonify(results)
 
 
 if __name__ == "__main__":
