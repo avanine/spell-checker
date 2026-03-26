@@ -1,6 +1,6 @@
 class DamerauLevenshtein:
 
-    def create_matrix(self, m, n):       
+    def create_matrix(self, m, n):
         matrix = [[0] * n for _ in range(m)]
 
         for i in range(m):
@@ -27,7 +27,8 @@ class DamerauLevenshtein:
                 )
 
                 # Transpositio (kahden peräkkäisen merkin vaihtaminen)
-                # Jos kaksi peräkkäistä merkkiä ovat samat ensimmäisessä ja toisessa sanassa, mutta eri järjestyksessä, niin vaihto voidaan tehdä yhdellä operaatiolla kahden sijaan
+                # Jos kaksi peräkkäistä merkkiä ovat samat molemmissa sanoissa
+                # mutta eri järjestyksessä, vaihto onnistuu yhdellä operaatiolla
                 if i > 1 and j > 1 and word1[i-1] == word2[j-2] and word1[i-2] == word2[j-1]:
                     matrix[i][j] = min(matrix[i][j], matrix[i-2][j-2] + 1)
 

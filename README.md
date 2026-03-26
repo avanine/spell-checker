@@ -1,3 +1,5 @@
+[![Pylint](https://github.com/avanine/spell-checker/actions/workflows/pylint.yml/badge.svg)](https://github.com/avanine/spell-checker/actions/workflows/pylint.yml)
+
 # Kirjoitusvirheiden korjaaja
 
 Tämä projekti on Helsingin yliopiston Algoritmit ja tekoäly -kurssin harjoitustyö. Ohjelma tunnistaa väärin kirjoitettuja sanoja ja ehdottaa niille korjauksia sanakirjan perusteella. Toiminnallisuus toteutetaan tallentamalla sanat itse toteutettuun trie-tietorakenteeseen ja vertaamalla sanojen Damerau-Levenshtein-etäisyyttä.

@@ -1,20 +1,20 @@
-from flask import Flask, request, render_template, jsonify
 from pathlib import Path
-from trie import Trie
+from flask import Flask, request, render_template, jsonify
+from spell_checker.trie import Trie
 
 app = Flask(__name__)
 
 def load_words():
     data_path = Path(__file__).resolve().parents[2] / "data" / "finnish_words_kotus.txt"
 
-    trie = Trie()
+    word_trie = Trie()
 
     with open(data_path, encoding='utf-8') as file:
         for line in file:
             word = line.strip()
             if word:
-                trie.insert(word)
-    return trie
+                word_trie.insert(word)
+    return word_trie
 
 trie = load_words()
 
