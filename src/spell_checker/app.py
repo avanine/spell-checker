@@ -1,3 +1,5 @@
+"""Flask-sovellus kirjoitusvirheiden tarkistukseen."""
+
 from pathlib import Path
 from flask import Flask, request, render_template, jsonify
 from spell_checker.trie import Trie
@@ -5,6 +7,7 @@ from spell_checker.trie import Trie
 app = Flask(__name__)
 
 def load_words():
+    """Lataa sanalistan tiedostosta ja tallentaa sen trieen."""
     data_path = Path(__file__).resolve().parents[2] / "data" / "finnish_words_kotus.txt"
 
     word_trie = Trie()
@@ -20,10 +23,12 @@ trie = load_words()
 
 @app.route("/")
 def index():
+    """Palauttaa etusivun."""
     return render_template("index.html")
 
 @app.route("/check", methods=["POST"])
 def check():
+    """Tarkistaa listan sanoja ja palauttaa tulokset JSON-muodossa."""
     data = request.get_json()
     words = data.get("words", [])
     results = {}

@@ -1,13 +1,18 @@
-class TrieNode:
+"""Trie-tietorakenne sanojen tallentamiseen ja hakuun."""
+
+class TrieNode:  # pylint: disable=too-few-public-methods
+    """Yksittäinen solmu triessä."""
     def __init__(self):
         self.children = {}
         self.is_end_of_word = False
 
 class Trie:
+    """Trie-tietorakenne, joka tukee sanojen lisäämistä, hakua ja iterointia."""
     def __init__(self):
         self.root = TrieNode()
 
     def insert(self, word):
+        """Lisää sanan trieen."""
         node = self.root
         for char in word:
             if char not in node.children:
@@ -25,6 +30,7 @@ class Trie:
             yield from self._collect_words(child, prefix + char)
 
     def search(self, word):
+        """Hakee sanaa triestä ja palauttaa True jos sana löytyy, muuten False."""
         node = self.root
         for char in word:
             if char not in node.children:

@@ -1,6 +1,9 @@
-class DamerauLevenshtein:
+"""Damerau-Levenshtein-etäisyyden laskeminen."""
 
+class DamerauLevenshtein:
+    """Laskee kahden sanan välisen Damerau-Levenshtein-etäisyyden."""
     def create_matrix(self, m, n):
+        """Luo ja alustaa etäisyysmatriisin."""
         matrix = [[0] * n for _ in range(m)]
 
         for i in range(m):
@@ -11,6 +14,7 @@ class DamerauLevenshtein:
         return matrix
 
     def distance(self, word1, word2):
+        """Laskee kahden sanan välisen etäisyyden."""
         m = len(word1)
         n = len(word2)
         matrix = self.create_matrix(m + 1, n + 1)
