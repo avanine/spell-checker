@@ -15,3 +15,11 @@ def test_insert_and_search():
 def test_empty_trie():
     trie = Trie()
     assert not trie.search("kissa")
+
+def test_iterator():
+    trie = Trie()
+    trie.insert("kissa")
+    trie.insert("koira")
+    trie.insert("kala")
+    words = sorted(list(trie))
+    assert words == ["kala", "kissa", "koira"]
