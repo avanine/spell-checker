@@ -1,7 +1,7 @@
 # Testausraportti
 
 ## Yksikkötestauksen kattavuusraportti
-
+<img width="963" height="327" alt="testikattavuus" src="https://github.com/user-attachments/assets/064f0161-2417-4762-bb92-4ac2cc472e4d" />
 
 ## Mitä on testattu
 
