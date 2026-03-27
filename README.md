@@ -1,4 +1,5 @@
 [![Pylint](https://github.com/avanine/spell-checker/actions/workflows/pylint.yml/badge.svg)](https://github.com/avanine/spell-checker/actions/workflows/pylint.yml)
+[![codecov](https://codecov.io/gh/avanine/spell-checker/graph/badge.svg)](https://codecov.io/gh/avanine/spell-checker)
 
 # Kirjoitusvirheiden korjaaja
 
