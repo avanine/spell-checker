@@ -1,7 +1,7 @@
 # Testausraportti
 
 ## Yksikkötestauksen kattavuusraportti
-<img width="963" height="327" alt="testikattavuus" src="https://github.com/user-attachments/assets/064f0161-2417-4762-bb92-4ac2cc472e4d" />
+<img width="978" height="349" alt="coverage" src="https://github.com/user-attachments/assets/e904ae7a-ce72-4648-acaa-7874ecc5c205" />
 
 ## Mitä on testattu
 
@@ -17,6 +17,13 @@
 - **Tyhjät syötteet**: Testattu, että kahden tyhjän merkkijonon välinen etäisyys on 0. Testattu myös, että tyhjän merkkijonon ja ei-tyhjän merkkijonon välinen etäisyys on ei-tyhjän merkkijonon pituus.
 - **Identtiset sanat**: Testattu, että kahden identtisen merkkijonon välinen etäisyys on 0.
 - **Usea muokkaus**: Testattu, että useamman muokkauksen vaativat sanat palauttavat oikean etäisyyden.
+
+### Sanojen korjausehdotukset
+
+- Sana löytyy sanakirjasta
+- Sanaa ja kahden operaation etäisyydellä olevaa ehdotusta ei löydy sanakirjasta
+- Transposition vaativa ehdotus löytyy
+- Yhden muokkauksen vaativa ehdotus löytyy
 
 ## Miten testit voidaan toistaa
 
