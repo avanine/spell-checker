@@ -3,6 +3,7 @@
 from pathlib import Path
 from flask import Flask, request, render_template, jsonify
 from spell_checker.trie import Trie
+from spell_checker.suggestions import suggest
 
 app = Flask(__name__)
 
@@ -38,6 +39,14 @@ def check():
             results[word] = trie.search(cleaned)
     return jsonify(results)
 
+@app.route("/suggest")
+def get_suggestions():
+    """Palauttaa korjausehdotukset annetulle sanalle."""
+    word = request.args.get("word", "")
+    if word:
+        results = suggest(trie, word.lower())
+        return jsonify({"suggestions": results})
+    return jsonify({"suggestions": []})
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
