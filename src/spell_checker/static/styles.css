@@ -52,3 +52,27 @@ mark {
     border-radius: 2px;
     color: transparent;
 }
+
+#suggestions {
+    display: none;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#suggestions .suggestion {
+    cursor: pointer;
+    color: #c84bde;
+}
+
+#suggestions .suggestion:hover {
+    text-decoration: underline;
+}
+
+#suggestions .no-suggestions {
+    color: #999;
+}
