@@ -8,6 +8,7 @@ Tämä projekti on Helsingin yliopiston Algoritmit ja tekoäly -kurssin harjoitu
 ## Dokumentaatio
 - [Määrittelydokumentti](./docs/maarittelydokumentti.md)
 - [Testausraportti](./docs/testausraportti.md)
+- [Toteutusdokumentti](./docs/toteutusdokumentti.md)
 
 ## Viikkoraportit
 - [Viikko 1](./docs/viikkoraportit/viikko1.md)
