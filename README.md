@@ -14,6 +14,7 @@ Tämä projekti on Helsingin yliopiston Algoritmit ja tekoäly -kurssin harjoitu
 - [Viikko 1](./docs/viikkoraportit/viikko1.md)
 - [Viikko 2](./docs/viikkoraportit/viikko2.md)
 - [Viikko 3](./docs/viikkoraportit/viikko3.md)
+- [Viikko 4](./docs/viikkoraportit/viikko4.md)
 
 ## Sovelluksen käynnistäminen
 
