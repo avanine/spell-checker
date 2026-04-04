@@ -11,6 +11,18 @@ Ohjelma koostuu neljästä päämoduulista:
 
 Käyttöliittymä on toteutettu HTML/CSS/JavaScript-pohjaisena. Käyttäjä kirjoittaa tekstiä textarea-kenttään, ja väärin kirjoitetut sanat korostetaan reaaliaikaisesti. Korjausehdotukset haetaan klikkaamalla korostettua sanaa.
 
+## Aikavaativuudet
+
+- Trie-operaatiot (haku ja lisäys): O(m), missä m on sanan pituus
+- DL-etäisyys: O(mn), missä m ja n ovat sanojen pituudet
+- Ehdotusten haku: O(kmn), missä k on sanakirjan sanojen määrä
+
+## Suorituskyky
+
+Nykyinen toteutus käy läpi koko sanakirjan ja laskee DL-etäisyyden. Ehdotusten haku sanalle "kisssa" kesti 0.91 sekuntia (test_performance.py).
+
+Seuraava optimointi on trie-pohjainen karsinta, jossa kokonaisia haaroja ohitetaan.
+
 ## Puutteet ja parannukset
 - algoritmin optimointi
 - sanakirjan vaihtaminen sellaiseen, joka sisältää yleisyystiedon

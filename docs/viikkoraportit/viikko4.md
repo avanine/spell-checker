@@ -1,7 +1,7 @@
 # Viikko 4
 
 ### Mitä olen tehnyt tällä viikolla?
-Lisäsin suggest-endpointin, joka palauttaa korjausehdotukset. Toin korjausehdotukset näkyville käyttöliittymään sanaa klikkaamalla. Järjestin ehdotukset lähimmästä kauimpaan ja rajoitin näytettävien ehdotusten määrän max 5 kappaleeseen. Kirjoitin alustavan toteutusdokumentin.
+Lisäsin suggest-endpointin, joka palauttaa korjausehdotukset. Toin korjausehdotukset näkyville käyttöliittymään sanaa klikkaamalla. Järjestin ehdotukset lähimmästä kauimpaan ja rajoitin näytettävien ehdotusten määrän max 5 kappaleeseen. Kirjoitin alustavan toteutusdokumentin. Lisäsin testin, joka mittaa kuinka kauan kestää löytää ehdotukset annetulle väärinkirjoitetulle sanalle.
 
 ### Miten ohjelma on edistynyt?
 Tällä viikolla hieman hitaammin aikataulullisista haasteista johtuen, mutta pakolliset osuudet on silti tehty aikataulussa.
@@ -18,4 +18,4 @@ Optimoin algoritmia ja parannan trieä siten, että jokaista sanaa ei tarvitse v
 ---
 
 ### Käytetty aika
-2h 30min
+3h
