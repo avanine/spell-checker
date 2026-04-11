@@ -19,12 +19,10 @@ Käyttöliittymä on toteutettu HTML/CSS/JavaScript-pohjaisena. Käyttäjä kirj
 
 ## Suorituskyky
 
-Nykyinen toteutus käy läpi koko sanakirjan ja laskee DL-etäisyyden. Ehdotusten haku sanalle "kisssa" kesti 0.91 sekuntia (test_performance.py).
-
-Seuraava optimointi on trie-pohjainen karsinta, jossa kokonaisia haaroja ohitetaan.
+Trie-pohjainen karsinta hakee ehdotukset sanalle "kisssa" ajassa 0.01 sekuntia (test_performance.py).
 
 ## Puutteet ja parannukset
-- algoritmin optimointi
+- ehdotusten järjestäminen niin, että ne ovat osuvampia
 - sanakirjan vaihtaminen sellaiseen, joka sisältää yleisyystiedon
 - käyttöliittymän hiominen
 
@@ -32,6 +30,7 @@ Seuraava optimointi on trie-pohjainen karsinta, jossa kokonaisia haaroja ohiteta
 
 **ChatGPT-5.3**
 - Damerau-Levenshtein-etäisyyden ymmärtäminen: pyydetty selittämään miten algoritmi toimii, tarkentaen epäselvimpiä kohtia
+- trie-pohjaisen karsinnan selittäminen vaihe vaiheelta
 - koodin toiminnallisuuden tarkistus
 - aikataulutuksessa auttaminen
 
