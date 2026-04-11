@@ -38,7 +38,7 @@ class DamerauLevenshtein:
 
         return matrix[m][n]
 
-    def compute_row(self, word, char, prev_char, previous_row, two_rows_back):
+    def compute_row(self, word, char, prev_char, previous_row, two_rows_back):  # pylint: disable=too-many-arguments,too-many-positional-arguments
         """Laskee yhden rivin DL-matriisista.
 
         Args:

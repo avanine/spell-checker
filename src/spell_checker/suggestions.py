@@ -19,7 +19,7 @@ def suggest(trie, word, max_distance=2):
     results.sort(key=lambda x: x[0])
     return [s for _, s in results[:5]]
 
-def _search_trie(dl, node, char, word, prefix, prev_char,
+def _search_trie(dl, node, char, word, prefix, prev_char,  # pylint: disable=too-many-arguments,too-many-positional-arguments
                  previous_row, two_rows_back, results, max_distance):
     """Käy läpi trieä rekursiivisesti ja laskee DL-etäisyyden rivi kerrallaan."""
     current_prefix = prefix + char
