@@ -37,3 +37,31 @@ class DamerauLevenshtein:
                     matrix[i][j] = min(matrix[i][j], matrix[i-2][j-2] + 1)
 
         return matrix[m][n]
+
+    def compute_row(self, word, char, prev_char, previous_row, two_rows_back):
+        """Laskee yhden rivin DL-matriisista.
+
+        Args:
+            word: haettava sana (käyttäjän syöte)
+            char: nykyinen merkki (trien solmu)
+            prev_char: edellinen merkki triessä (transpositiota varten)
+            previous_row: edellinen rivi DL-matriisista
+            two_rows_back: sitä edellinen rivi (transpositiota varten)
+        """
+        columns = len(word) + 1
+        current_row = [previous_row[0] + 1]
+
+        for j in range(1, columns):
+            cost = 0 if word[j - 1] == char else 1
+
+            current_row.append(min(
+                current_row[j - 1] + 1,
+                previous_row[j] + 1,
+                previous_row[j - 1] + cost
+            ))
+
+            if two_rows_back is not None and j > 1 and prev_char is not None:
+                if word[j - 1] == prev_char and word[j - 2] == char:
+                    current_row[j] = min(current_row[j], two_rows_back[j - 2] + 1)
+
+        return current_row
