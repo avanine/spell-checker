@@ -13,7 +13,7 @@ Opin miten ehdotusten laatua voi parantaa.
 Ei mikään tällä hetkellä.
 
 ### Mitä teen seuraavaksi?
-Optimoin algoritmia ja parannan trieä siten, että jokaista sanaa ei tarvitse vertailla yksi kerrallaan. Vaihdan todennäköisesti sanalistan sellaiseksi, joka sisältää yleisyystiedon, jotta ehdotukset olisivat osuvampia.
+Vaihdan todennäköisesti sanalistan sellaiseksi, joka sisältää yleisyystiedon, jotta ehdotukset olisivat osuvampia.
 
 ---
 
