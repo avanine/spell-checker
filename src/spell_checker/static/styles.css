@@ -3,19 +3,29 @@ body {
     max-width: 700px;
     margin: 40px auto;
     padding: 0 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 24px;
 }
 
 #editor-container {
     position: relative;
     width: 100%;
     height: 300px;
+    background: white;
+    border-radius: 8px;
 }
 
 #textarea, #highlights {
     font-family: monospace;
     font-size: 16px;
     line-height: 1.5;
-    padding: 12px;
+    padding: 20px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -37,9 +47,10 @@ body {
     position: relative;
     z-index: 1;
     background: transparent;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     resize: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 #textarea:focus {
@@ -55,22 +66,26 @@ mark {
 
 #suggestions {
     display: none;
-    margin-top: 8px;
-    padding: 8px 12px;
-    background: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 14px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 #suggestions .suggestion {
     cursor: pointer;
     color: #c84bde;
+    background: #f3e8f9;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin: 0 4px;
 }
 
 #suggestions .suggestion:hover {
-    text-decoration: underline;
+    background: #e8d4f0;
 }
 
 #suggestions .no-suggestions {

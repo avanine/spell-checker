@@ -67,7 +67,7 @@ textarea.addEventListener("click", async () => {
     if (data.suggestions.length > 0) {
         const links = data.suggestions.map(s =>
             `<span class="suggestion" data-word="${s}" data-original="${word}">${s}</span>`
-        ).join(", ");
+        ).join(" ");
         suggestions.innerHTML = `<div><strong>${word}:</strong> ${links}</div>`;
     } else {
         suggestions.innerHTML = `<div><strong>${word}:</strong> <span class="no-suggestions">No suggestions</span></div>`;
