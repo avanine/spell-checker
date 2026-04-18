@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kirjoitusvirheiden korjaaja</title>
+    <title>Spell Checker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Kirjoitusvirheiden korjaaja</h1>
+    <h1>Spell Checker</h1>
     <div id="editor-container">
         <div id="highlights"></div>
-        <textarea id="textarea" placeholder="Kirjoita tekstiä tähän..."></textarea>
+        <textarea id="textarea" placeholder="Type text here..."></textarea>
     </div>
     <div id="suggestions"></div>
     <script src="{{ url_for('static', filename='spellcheck.js') }}"></script>

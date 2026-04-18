@@ -12,7 +12,7 @@ textarea.addEventListener("scroll", () => {
 async function checkWords() {
     const text = textarea.value;
     const endsWithSpace = /\s$/.test(text);
-    const words = text.match(/[a-zA-ZäöåÄÖÅ]+/g) || [];
+    const words = text.match(/[a-zA-Z]+/g) || [];
     const wordsToCheck = endsWithSpace ? words : words.slice(0, -1);
 
     if (wordsToCheck.length > 0) {
@@ -30,7 +30,7 @@ async function checkWords() {
 }
 
 function updateHighlights(text, results) {
-    const html = text.replace(/[a-zA-ZäöåÄÖÅ]+/g, (match) => {
+    const html = text.replace(/[a-zA-Z]+/g, (match) => {
         if (results[match] === false) {
             return `<mark>${match}</mark>`;
         }
@@ -44,8 +44,8 @@ function getWordAtCursor() {
     const text = textarea.value;
     const before = text.slice(0, pos);
     const after = text.slice(pos);
-    const wordBefore = (before.match(/[a-zA-ZäöåÄÖÅ]+$/) || [""])[0];
-    const wordAfter = (after.match(/^[a-zA-ZäöåÄÖÅ]+/) || [""])[0];
+    const wordBefore = (before.match(/[a-zA-Z]+$/) || [""])[0];
+    const wordAfter = (after.match(/^[a-zA-Z]+/) || [""])[0];
     const word = wordBefore + wordAfter;
     const start = pos - wordBefore.length;
     return { word, start, end: start + word.length };
@@ -58,7 +58,7 @@ textarea.addEventListener("click", async () => {
         return;
     }
 
-    suggestions.innerHTML = `<strong>${word}:</strong> Ladataan...`;
+    suggestions.innerHTML = `<strong>${word}:</strong> Loading...`;
     suggestions.style.display = "block";
 
     const response = await fetch(`/suggest?word=${encodeURIComponent(word)}`);
@@ -70,7 +70,7 @@ textarea.addEventListener("click", async () => {
         ).join(", ");
         suggestions.innerHTML = `<div><strong>${word}:</strong> ${links}</div>`;
     } else {
-        suggestions.innerHTML = `<div><strong>${word}:</strong> <span class="no-suggestions">Ei ehdotuksia</span></div>`;
+        suggestions.innerHTML = `<div><strong>${word}:</strong> <span class="no-suggestions">No suggestions</span></div>`;
     }
 });
 
