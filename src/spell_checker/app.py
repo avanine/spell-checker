@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 def load_words():
     """Lataa sanalistan tiedostosta ja tallentaa sen trieen."""
-    data_path = Path(__file__).resolve().parents[2] / "data" / "finnish_words_kotus.txt"
+    data_path = Path(__file__).resolve().parents[2] / "data" / "english_words.txt"
 
     word_trie = Trie()
 

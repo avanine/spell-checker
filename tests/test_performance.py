@@ -4,7 +4,7 @@ from spell_checker.trie import Trie
 from spell_checker.suggestions import suggest
 
 def load_trie():
-    data_path = Path(__file__).resolve().parents[1] / "data" / "finnish_words_kotus.txt"
+    data_path = Path(__file__).resolve().parents[1] / "data" / "english_words.txt"
     trie = Trie()
     with open(data_path, encoding="utf-8") as file:
         for line in file:
@@ -15,7 +15,7 @@ def load_trie():
 
 def test_suggest_speed():
     trie = load_trie()
-    word = "kisssa"
+    word = "speling"
 
     start = time.time()
     results = suggest(trie, word)
