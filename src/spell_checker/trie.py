@@ -5,13 +5,14 @@ class TrieNode:  # pylint: disable=too-few-public-methods
     def __init__(self):
         self.children = {}
         self.is_end_of_word = False
+        self.frequency_rank = None
 
 class Trie:
     """Trie-tietorakenne, joka tukee sanojen lisäämistä, hakua ja iterointia."""
     def __init__(self):
         self.root = TrieNode()
 
-    def insert(self, word):
+    def insert(self, word, frequency_rank=None):
         """Lisää sanan trieen."""
         node = self.root
         for char in word:
@@ -19,6 +20,7 @@ class Trie:
                 node.children[char] = TrieNode()
             node = node.children[char]
         node.is_end_of_word = True
+        node.frequency_rank = frequency_rank
 
     def __iter__(self):
         yield from self._collect_words(self.root, "")

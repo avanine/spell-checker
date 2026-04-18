@@ -16,8 +16,8 @@ def suggest(trie, word, max_distance=2):
             initial_row, None, results, max_distance
         )
 
-    results.sort(key=lambda x: x[0])
-    return [s for _, s in results[:5]]
+    results.sort(key=lambda x: (x[0], x[1]))
+    return [s for _, _, s in results[:5]]
 
 def _search_trie(dl, node, char, word, prefix, prev_char,  # pylint: disable=too-many-arguments,too-many-positional-arguments
                  previous_row, two_rows_back, results, max_distance):
@@ -26,7 +26,8 @@ def _search_trie(dl, node, char, word, prefix, prev_char,  # pylint: disable=too
     current_row = dl.compute_row(word, char, prev_char, previous_row, two_rows_back)
 
     if node.is_end_of_word and current_row[-1] <= max_distance:
-        results.append((current_row[-1], current_prefix))
+        rank = node.frequency_rank if node.frequency_rank is not None else float('inf')
+        results.append((current_row[-1], rank, current_prefix))
 
     if min(current_row) <= max_distance:
         for next_char, next_node in node.children.items():

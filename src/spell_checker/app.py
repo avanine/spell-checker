@@ -14,10 +14,10 @@ def load_words():
     word_trie = Trie()
 
     with open(data_path, encoding='utf-8') as file:
-        for line in file:
+        for rank, line in enumerate(file):
             word = line.strip()
             if word:
-                word_trie.insert(word)
+                word_trie.insert(word, frequency_rank=rank)
     return word_trie
 
 trie = load_words()
