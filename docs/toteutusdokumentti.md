@@ -38,3 +38,4 @@ Trie-pohjainen karsinta hakee ehdotukset sanalle "kisssa" ajassa 0.01 sekuntia (
 - https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance
 - https://en.wikipedia.org/wiki/Trie
 - https://www.reddit.com/r/leetcode/comments/1exqiph/a_visual_guide_to_tries/
+- https://github.com/Maximax67/English-Valid-Words/blob/main/valid_words_sorted_by_frequency.csv (sanalista)
