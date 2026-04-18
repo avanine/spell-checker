@@ -22,9 +22,7 @@ Käyttöliittymä on toteutettu HTML/CSS/JavaScript-pohjaisena. Käyttäjä kirj
 Trie-pohjainen karsinta hakee ehdotukset sanalle "kisssa" ajassa 0.01 sekuntia (test_performance.py).
 
 ## Puutteet ja parannukset
-- ehdotusten järjestäminen niin, että ne ovat osuvampia
-- sanakirjan vaihtaminen sellaiseen, joka sisältää yleisyystiedon
-- käyttöliittymän hiominen
+- bugi: jos sama väärin kirjoitettu sana esiintyy textareassa useammin kuin kerran, menee valittu korjaus aina viimeisenä esiintyvään sanaan
 
 ## Laajojen kielimallien käyttö
 
