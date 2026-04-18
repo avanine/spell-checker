@@ -53,6 +53,10 @@ h1 {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
+#textarea::placeholder {
+    color: #bbb;
+}
+
 #textarea:focus {
     outline: none;
     border-color: #666;
@@ -65,7 +69,9 @@ mark {
 }
 
 #suggestions {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
     margin-top: 16px;
     padding: 12px 16px;
     background: white;

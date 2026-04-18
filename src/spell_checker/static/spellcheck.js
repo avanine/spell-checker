@@ -54,12 +54,12 @@ function getWordAtCursor() {
 textarea.addEventListener("click", async () => {
     const { word } = getWordAtCursor();
     if (!word || checkResults[word] !== false) {
-        suggestions.style.display = "none";
+        suggestions.style.opacity = "0"; suggestions.style.pointerEvents = "none";
         return;
     }
 
     suggestions.innerHTML = `<strong>${word}:</strong> Loading...`;
-    suggestions.style.display = "block";
+    suggestions.style.opacity = "1"; suggestions.style.pointerEvents = "auto";
 
     const response = await fetch(`/suggest?word=${encodeURIComponent(word)}`);
     const data = await response.json();
@@ -83,7 +83,7 @@ suggestions.addEventListener("click", (e) => {
     const lastIndex = text.lastIndexOf(original);
     if (lastIndex !== -1) {
         textarea.value = text.slice(0, lastIndex) + replacement + text.slice(lastIndex + original.length);
-        suggestions.style.display = "none";
+        suggestions.style.opacity = "0"; suggestions.style.pointerEvents = "none";
         checkWords();
     }
 });
