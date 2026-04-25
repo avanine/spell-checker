@@ -48,5 +48,15 @@ def get_suggestions():
         return jsonify({"suggestions": results})
     return jsonify({"suggestions": []})
 
+@app.route("/add", methods=["POST"])
+def add_word():
+    """Lisää sanan sanakirjaan."""
+    data = request.get_json()
+    word = data.get("word", "").lower().strip()
+    if word:
+        trie.insert(word)
+        return jsonify({"added": True})
+    return jsonify({"added": False})
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

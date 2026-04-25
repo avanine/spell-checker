@@ -64,17 +64,30 @@ textarea.addEventListener("click", async () => {
     const response = await fetch(`/suggest?word=${encodeURIComponent(word)}`);
     const data = await response.json();
 
+    const addBtn = `<span class="add-to-dict" data-word="${word}">+ Add to dictionary</span>`;
     if (data.suggestions.length > 0) {
         const links = data.suggestions.map(s =>
             `<span class="suggestion" data-word="${s}" data-start="${start}" data-end="${end}">${s}</span>`
         ).join(" ");
-        suggestions.innerHTML = `<div><strong>${word}:</strong> ${links}</div>`;
+        suggestions.innerHTML = `<div><strong>${word}:</strong> ${links} ${addBtn}</div>`;
     } else {
-        suggestions.innerHTML = `<div><strong>${word}:</strong> <span class="no-suggestions">No suggestions</span></div>`;
+        suggestions.innerHTML = `<div><strong>${word}:</strong> <span class="no-suggestions">No suggestions</span> ${addBtn}</div>`;
     }
 });
 
-suggestions.addEventListener("click", (e) => {
+suggestions.addEventListener("click", async (e) => {
+    const addBtn = e.target.closest(".add-to-dict");
+    if (addBtn) {
+        await fetch("/add", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ word: addBtn.dataset.word })
+        });
+        suggestions.style.opacity = "0"; suggestions.style.pointerEvents = "none";
+        checkWords();
+        return;
+    }
+
     const el = e.target.closest(".suggestion");
     if (!el) return;
     const replacement = el.dataset.word;
