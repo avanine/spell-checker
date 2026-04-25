@@ -52,7 +52,7 @@ function getWordAtCursor() {
 }
 
 textarea.addEventListener("click", async () => {
-    const { word } = getWordAtCursor();
+    const { word, start, end } = getWordAtCursor();
     if (!word || checkResults[word] !== false) {
         suggestions.style.opacity = "0"; suggestions.style.pointerEvents = "none";
         return;
@@ -66,7 +66,7 @@ textarea.addEventListener("click", async () => {
 
     if (data.suggestions.length > 0) {
         const links = data.suggestions.map(s =>
-            `<span class="suggestion" data-word="${s}" data-original="${word}">${s}</span>`
+            `<span class="suggestion" data-word="${s}" data-start="${start}" data-end="${end}">${s}</span>`
         ).join(" ");
         suggestions.innerHTML = `<div><strong>${word}:</strong> ${links}</div>`;
     } else {
@@ -78,12 +78,10 @@ suggestions.addEventListener("click", (e) => {
     const el = e.target.closest(".suggestion");
     if (!el) return;
     const replacement = el.dataset.word;
-    const original = el.dataset.original;
+    const start = parseInt(el.dataset.start);
+    const end = parseInt(el.dataset.end);
     const text = textarea.value;
-    const lastIndex = text.lastIndexOf(original);
-    if (lastIndex !== -1) {
-        textarea.value = text.slice(0, lastIndex) + replacement + text.slice(lastIndex + original.length);
-        suggestions.style.opacity = "0"; suggestions.style.pointerEvents = "none";
-        checkWords();
-    }
+    textarea.value = text.slice(0, start) + replacement + text.slice(end);
+    suggestions.style.opacity = "0"; suggestions.style.pointerEvents = "none";
+    checkWords();
 });
