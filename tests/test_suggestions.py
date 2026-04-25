@@ -27,6 +27,16 @@ def test_too_far_not_suggested(trie):
     assert "koira" not in results
     assert "kala" not in results
 
+def test_frequency_ranking():
+    word_trie = Trie()
+    word_trie.insert("cat", frequency_rank=0)
+    word_trie.insert("car", frequency_rank=1)
+    word_trie.insert("cap", frequency_rank=2)
+    results = suggest(word_trie, "cas")
+    assert results[0] == "cat"
+    assert results[1] == "car"
+    assert results[2] == "cap"
+
 def test_empty_trie():
     empty_trie = Trie()
     results = suggest(empty_trie, "kissa")
