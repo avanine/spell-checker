@@ -1,6 +1,7 @@
 const textarea = document.getElementById("textarea");
 const highlights = document.getElementById("highlights");
 const suggestions = document.getElementById("suggestions");
+const errorCount = document.getElementById("error-count");
 let checkResults = {};
 
 textarea.addEventListener("input", checkWords);
@@ -23,9 +24,11 @@ async function checkWords() {
         });
         checkResults = await response.json();
         updateHighlights(text, checkResults);
+        updateErrorCount(checkResults);
     } else {
         checkResults = {};
         updateHighlights(text, {});
+        updateErrorCount({});
     }
 }
 
@@ -37,6 +40,18 @@ function updateHighlights(text, results) {
         return match;
     });
     highlights.innerHTML = html + "\n";
+}
+
+function updateErrorCount(results) {
+    const words = textarea.value.match(/[a-zA-Z]+/g) || [];
+    const count = words.filter(w => results[w] === false).length;
+    if (count > 0) {
+        errorCount.textContent = `⚠️ ${count} misspelled word${count > 1 ? "s" : ""}`;
+        errorCount.style.opacity = "1";
+    } else {
+        errorCount.textContent = "";
+        errorCount.style.opacity = "0";
+    }
 }
 
 function getWordAtCursor() {
