@@ -24,6 +24,11 @@
 - Sanaa ja kahden operaation etäisyydellä olevaa ehdotusta ei löydy sanakirjasta
 - Transposition vaativa ehdotus löytyy
 - Yhden muokkauksen vaativa ehdotus löytyy
+- Yleisyysjärjestys: samat etäisyydet järjestyvät sanan yleisyyden mukaan
+
+### Suorituskyky
+
+- Ehdotusten haku koko sanakirjalla (172 782 sanaa) kestää noin 0.02 sekuntia
 
 ## Miten testit voidaan toistaa
 
